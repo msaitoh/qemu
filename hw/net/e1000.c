@@ -212,7 +212,7 @@ static const char phy_regcap[0x20] = {
     [PHY_LP_ABILITY]  = PHY_R,     [PHY_1000T_STATUS]           = PHY_R,
     [PHY_AUTONEG_ADV] = PHY_RW,    [M88E1000_RX_ERR_CNTR]       = PHY_R,
     [PHY_ID2]         = PHY_R,     [M88E1000_PHY_SPEC_STATUS]   = PHY_R,
-    [PHY_AUTONEG_EXP] = PHY_R,
+    [PHY_AUTONEG_EXP] = PHY_R,     [PHY_EXT_STATUS]             = PHY_R,
 };
 
 /* PHY_ID2 documented in 8254x_GBe_SDM.pdf, pp. 250 */
@@ -238,6 +238,7 @@ static const uint16_t phy_reg_init[] = {
     [PHY_LP_ABILITY] = 0x1e0,
     [PHY_1000T_CTRL] = 0x0e00,
     [PHY_1000T_STATUS] = 0x3c00,
+    [PHY_EXT_STATUS] = BIT(12) | BIT(13),
     [M88E1000_PHY_SPEC_CTRL] = 0x360,
     [M88E1000_PHY_SPEC_STATUS] = 0xac00,
     [M88E1000_EXT_PHY_SPEC_CTRL] = 0x0d60,
